@@ -5,8 +5,11 @@ const TodoList = ({ todos }) => {
 
     const elements = todos.map( (item) => {
 
+        const {id, ...itemProps} = item
+
         return (
-            <li><TodoListItem {...item} />
+            <li key={id}>
+                <TodoListItem {...itemProps} />
             </li>
         );
     });
